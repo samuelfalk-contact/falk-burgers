@@ -53,6 +53,7 @@
       <div class="row">
         <div class="col-md-6">
           <img
+            id="imagem"
             src="img/burger1.png"
             alt="Hambúrguer Clássico"
             class="img-fluid rounded"
@@ -60,12 +61,12 @@
         </div>
 
         <div class="col-md-6">
-          <h2>Classic Burger</h2>
-          <p>
+          <h2 id="nome">Classic Burger</h2>
+          <p id="descricao">
             Pão brioche, blend de carne 150g, queijo, alface, tomate e molho
             especial.
           </p>
-          <p class="fw-bold fs-3">R$ 29,90</p>
+          <p class="fw-bold fs-3" id="preco">R$ 29,90</p>
 
           <a href="carrinho.html" class="btn btn-warning"
             >Adicionar ao Carrinho</a
@@ -86,5 +87,14 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("nome").textContent =
+        localStorage.getItem("nome");
+      document.getElementById("preco").textContent =
+        "R$ " + localStorage.getItem("preco");
+      document.getElementById("descricao").textContent =
+        localStorage.getItem("descricao");
+      document.getElementById("imagem").src = localStorage.getItem("imagem");
+    </script>
   </body>
 </html>
